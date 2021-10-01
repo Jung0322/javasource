@@ -1,10 +1,19 @@
 package dept;
 
+import java.util.Scanner;
+
 public class DeptMain {
 
 	public static void main(String[] args) {
 		
-		int asd =13232;
+		boolean run = true;
+		Scanner sc = new Scanner(System.in);
+		
+		while(run) {
+			
+		}
+		
+		
 	}
 
 }
