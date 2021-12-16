@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -46,7 +45,7 @@ public class JTableTest1 extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		setContentPane(contentPane);	
 		
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
@@ -62,6 +61,8 @@ public class JTableTest1 extends JFrame {
 				"\uC774\uB984", "\uB098\uC774", "\uC131\uBCC4"
 			}
 		));
+		scrollPane.setViewportView(table);
+			
 		
 		JButton btnNewButton = new JButton("\uCD9C\uB825");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -69,17 +70,28 @@ public class JTableTest1 extends JFrame {
 				//JTable 내용을 화면으로 출력
 				TableModel model = table.getModel();
 				System.out.println("이름\t나이\t성별");
-				for(int i =0;i<model.getRowCount();i++) {
+				for(int i=0;i<model.getRowCount();i++) {
 					for(int j=0;j<model.getColumnCount();j++) {
 						System.out.print(model.getValueAt(i, j)+"\t");
 					}
 					System.out.println();
 				}
-		
 			}
 		});
 		contentPane.add(btnNewButton, BorderLayout.SOUTH);
-		scrollPane.setViewportView(table);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
